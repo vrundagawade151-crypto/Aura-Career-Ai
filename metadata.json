@@ -1,0 +1,6 @@
+{
+  "name": "AI Career Guidance System",
+  "description": "An AI-powered career assistant that recommends career paths, course outlines, skill gap analysis, resume reviews, and a guidance chatbot aligned with UN SDG 4: Quality Education.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
