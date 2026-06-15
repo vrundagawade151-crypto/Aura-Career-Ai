@@ -12,22 +12,22 @@ const LOCAL_STORAGE_KEYS = {
 };
 
 const DEFAULT_PROFILE: StudentProfileType = {
-  name: "Sarah Jenkins",
-  currentLevel: "Undergraduate Scholar",
-  fieldOfStudy: "Information Systems",
-  interests: ["Technology & AI", "Solving Complex Problems", "Data Analysis & Math"],
-  skills: ["Python Coding", "Critical Thinking", "Team Collaboration"],
-  strengths: ["Analytical Mindset", "Empathetic Communication", "Meticulous Attention to Detail"],
-  workStyle: "Dynamic Team Environment"
+  name: "",
+  currentLevel: "High School Student",
+  fieldOfStudy: "",
+  interests: [],
+  skills: [],
+  strengths: [],
+  workStyle: ""
 };
 
 // Default initial chatbot greeting
 const INITIAL_CHAT = (name: string): ChatMessage[] => [
   {
     role: "model",
-    text: `Hello ${name}! Welcome to GuidanceAI, your career advisor.
+    text: `Hello${name ? ` ${name}` : ""}! Welcome to GuidanceAI, your career advisor.
 
-Aligning with **UN SDG Goal 4: Quality Education**, my mission is to remove structural guidance barriers and empower you with highly targeted roadmap options.
+I'm here to help you discover your ideal career path, identify skill gaps, and build a structured learning roadmap tailored to your goals.
 
 To get started:
 1. Define your traits and skills in the **Student Profile** tab.
@@ -215,7 +215,6 @@ I've unlocked the **Career Pathways Explorer** for you! Check them out, review c
             <GraduationCap className="w-6 h-6 text-white" />
           </div>
           <h1 className="text-lg font-bold tracking-tight text-slate-950">Aura Career AI</h1>
-          <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">SDG 4: Quality Edu</p>
         </div>
 
         {/* Left Nav menu items */}
@@ -281,7 +280,6 @@ I've unlocked the **Career Pathways Explorer** for you! Check them out, review c
           </div>
           <div>
             <h2 className="text-xs font-bold text-slate-800">Aura Career AI</h2>
-            <p className="text-[9px] text-slate-400 font-medium">SDG 4: Quality Education</p>
           </div>
         </div>
         
@@ -339,20 +337,6 @@ I've unlocked the **Career Pathways Explorer** for you! Check them out, review c
         {/* Content Box with geometric spacings */}
         <div className="p-6 md:p-10 flex-1 flex flex-col space-y-8" id="stage-main">
           
-          {/* SDG 4 Quality Education Banner */}
-          <div className="p-6 bg-gradient-to-r from-indigo-950 to-slate-900 text-white rounded-2xl border border-slate-800 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6" id="sdg-banner">
-            <div className="space-y-1.5 flex-1">
-              <div className="flex items-center space-x-2">
-                <span className="bg-gradient-to-r from-emerald-500 to-teal-500 text-[10px] text-white font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-inner">SDG Goal 4</span>
-                <span className="text-xs text-indigo-300 font-semibold tracking-wider">Quality Education & Integration Matrix</span>
-              </div>
-              <h2 className="text-lg font-bold tracking-tight">SDG 4: Equitable Professional Competence Guide</h2>
-              <p className="text-xs text-slate-300/90 leading-relaxed max-w-4xl">
-                Empolying state of the art models to address structural barriers in guidance. Generates direct skill gaps reports, lists open educational pathways to address goals, and evaluates text resumes against ATS requirements.
-              </p>
-            </div>
-          </div>
-
           {/* Global Error message reporting */}
           {errorMessage && (
             <div className="p-4 bg-rose-50 border border-rose-100 text-rose-700 rounded-xl text-xs flex items-center justify-between shadow-xs" id="global-err-box">
